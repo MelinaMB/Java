@@ -1,6 +1,246 @@
+/* celular */
 /* nav */
-
 .navbar-collapse {
+    justify-content: flex-end;
+}
 
+.imglogo,
+img {
+    width: 100px;
+}
+
+/* main */
+/* parte backgroundimg */
+.backgroundimg {
+    background-image: url(./img/ba1.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 650px;
+    position: relative;
+}
+
+.backgroundimg:before {
+    content: '';
+    position: absolute;
+    background-color: black;
+    opacity: 0.6;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.text-conf-bsas {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    height: 650px;
+}
+
+.text-bsas {
+    width: 40%;
+    text-align: end;
+    margin-right: 60px;
+    color: white;
+    position: relative;
+}
+
+.botones {
+    margin: 5px;
+}
+
+/* parte de los oradores */
+.oradores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contenedor {
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+    width: 100%;
+    margin: 0;
+    justify-content: space-evenly;
+}
+
+.card-img-top {
+    height: 298px;
+}
+
+.card {
+    margin: 10px;
+    padding: 0;
+    width: 60%;
+}
+
+.titulo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* parte de foto a la mitad */
+.bsas-octubre {
+    display: flex;
+    height: 500px;
+}
+
+.foto-mitad {
+    background-image: url(./img/honolulu.jpg);
+    width: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.mitad {
+    margin-left: 1px;
+    background-color: black;
+    opacity: 0.8;
+    width: 50%;
+}
+
+.texto-mitad {
+    margin-left: 20px;
+}
+
+/* pater de formulario */
+.text-form {
+    display: flex;
+}
+.text-form p {
+    margin: 1px;
+}
+.text {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.margin-r {
+    margin-right: 30px;
+}
+
+.nombre-apellido {
+    width: 300px;
+}
+
+.boton-form {
+    background-color: rgb(29, 192, 7);
+}
+
+/* footer */
+.footer {
+    margin-top: 10px;
+    background-color: rgb(71, 71, 241);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+    
+}
+
+ul,
+li,
+a {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/*----------------------- breakpoint */
+
+@media screen and (min-width: 768px) {
+/* main */
+
+/* parte de los oradores */
+.oradores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contenedor {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 80%;
+}
+
+.cards {
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    justify-content: space-evenly;
+}
+
+.card-img-top {
+    height: 290px;
+}
+
+.card {
+    margin: 10px;
+    padding: 0;
+    width: 30%;
+    height: 682px;
+}
+
+/* pater de formulario */
+.text {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+}
+
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+}
+
+/* footer */
+.footer {
+    margin-top: 10px;
+    background-color: rgb(71, 71, 241);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+
+ul,
+li,
+a {
+    text-decoration: none;
+    list-style-type: none;
+}
     
 }
