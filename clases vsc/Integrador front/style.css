@@ -82,7 +82,7 @@ img {
 .card {
     margin: 10px;
     padding: 0;
-    width: 60%;
+    width: 337px;
 }
 
 .titulo-card {
@@ -119,6 +119,8 @@ img {
 /* pater de formulario */
 .text-form {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .text-form p {
     margin: 1px;
@@ -148,17 +150,17 @@ img {
 }
 
 .boton-form {
-    background-color: rgb(29, 192, 7);
+    background-color: rgb(120, 184, 17) ;
 }
 
 /* footer */
 .footer {
     margin-top: 10px;
-    background-color: rgb(71, 71, 241);
+    background-color: rgb(6, 43, 79);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 0;
     
 }
@@ -169,6 +171,8 @@ a {
     text-decoration: none;
     list-style-type: none;
 }
+
+
 
 /*----------------------- breakpoint */
 
@@ -203,11 +207,16 @@ a {
 .card {
     margin: 10px;
     padding: 0;
-    width: 30%;
+   
     height: 682px;
 }
 
 /* pater de formulario */
+.text-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .text {
     text-decoration-line: underline;
     text-decoration-style: dotted;
@@ -228,12 +237,12 @@ a {
 /* footer */
 .footer {
     margin-top: 10px;
-    background-color: rgb(71, 71, 241);
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 ul,
