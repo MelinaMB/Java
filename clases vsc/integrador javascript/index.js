@@ -1,4 +1,4 @@
-const listaCompras = [];
+let listaCompras = [];
 
 function calcularPrecioTotal() {
 
@@ -44,7 +44,7 @@ cargarDesdeLocal = () => {
 
 mostrarCompra = (lista) => {
     let compra =
-        `<table>
+        `<table class="table">
             <tr>
                 <th>Nombre </th>
                 <th>Apellido </th>
@@ -61,17 +61,28 @@ mostrarCompra = (lista) => {
         compra += `<td>$${dato.Descuento}</td>`
         compra += `<td>$${dato.Precio}</td>`
         compra += `<td>
-        <button onclick="eliminar(${dato.id})">X</button>
+        <button onclick ="eliminarCompra(${dato.id})">X</button>
         </td>`
         
         compra += '</tr>'
     }
     compra += '</table>'
     return compra;
+   
 }
-eliminar = (id) => {
-    const eliminarCompra = listaCompras.filter((x) => x.id !== id  );
-    alert(id);
+const eliminarCompra = (id) => {
+
+    const datoEnLocal = localStorage.getItem('Compras');
+    const datosParseados = JSON.parse(datoEnLocal);
+
+    const item = datosParseados.findIndex((x) => x.id == id);
     
-    mostrarCompra(eliminarCompra);
+    datosParseados.splice(item, 1);
+
+    listaCompras = datosParseados;
+    localStorage.setItem('Compras', JSON.stringify(listaCompras))
+    const tabla = mostrarCompra(listaCompras);
+
+    mostrarResultado(tabla);
 }
+
