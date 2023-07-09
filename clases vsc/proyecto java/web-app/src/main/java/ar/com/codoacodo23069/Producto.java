@@ -27,7 +27,7 @@ public class Producto {
     }
 
         //sobrecarga: constructor = polimorfismo (constructor con mismo nombre pero con distintos argumentos)
-     public Producto(String titulo, String autor, double precio, String imagen, ) {
+     public Producto(String titulo, String autor, double precio, String imagen ) {
         //el objeto nace con estos valores
         this.titulo = titulo;
         this.autor = autor;
