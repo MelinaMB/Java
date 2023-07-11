@@ -7,6 +7,8 @@
   <groupId>ar.com.codoacodo23069</groupId>
   <artifactId>web-app</artifactId>
   <version>1.0.0-SNAPSHOT</version>
+  <!--le digo a maven que es un proyecto web-->
+  <packaging>war</packaging>
 
   <name>web-app</name>
   <!-- FIXME change it to the project's website -->
