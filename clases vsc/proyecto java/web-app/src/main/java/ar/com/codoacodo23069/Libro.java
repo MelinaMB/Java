@@ -9,7 +9,7 @@ public class Libro extends Producto{
         // super = padre
         //cuando uso super() estoy invocando a la clase padre es decir que nace el padre, por lo que ya puede nacer el hijo
         //los parametros tienen que estar en orden como esta en el padre
-        super(titulo, autor, precio, imagen, id, codigo);
+        super(titulo, autor, precio, imagen, isbn);
         //ahora puede nacer el hijo 
         this.isbn = isbn;
     }

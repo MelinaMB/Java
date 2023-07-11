@@ -6,22 +6,27 @@ import java.time.LocalDate;//api de fecha de java
 //clase Producto (puede ser un tipo de dato)
 public class Producto {
     //atributo, primero va el tipo de dato luego la variable
-    private String imagen;
-    //datos en decimal en java es double
-    private Double precio;
+    private long id;
     private String titulo;
     private String autor;
+    private Double precio;
+    private String imagen;
+    //datos en decimal en java es double
     //long se usa cuando necesito un valor mas ampli que el proporcionado por int
-    private long id;
     private LocalDate fecha;
     private String codigo;
 
-    //constructor
-    public Producto(String titulo, String autor, double precio, String imagen, int id, String codigo) {
-        //el objeto nace con estos valores
+    public Producto(long id, String titulo, String autor, double precio, String imagen, LocalDate fecha, String codigo); {
         this.id = id;
         init(titulo, autor, precio, imagen, codigo);
     }
+
+    //constructor
+    // public Producto(String titulo, String autor, double precio, String imagen, int id, String codigo) {
+    //     //el objeto nace con estos valores
+    //     this.id = id;
+    //     init(titulo, autor, precio, imagen, codigo);
+    // }
 
     private void init(String titulo, String autor, double precio, String imagen, String codigo) {
         this.titulo = titulo;

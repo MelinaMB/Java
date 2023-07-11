@@ -4,6 +4,7 @@ import java.sql.Connection;//es una interface de JDBC que esta implementado en e
 import java.sql.Date;
 //que agregamos al pom.xml
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import ar.com.cadoacodo.dao.AdministradorDeConexiones;
@@ -39,25 +40,45 @@ public class MysqlDaoImpl implements DAO {
 
     
     public Producto getById(Long id) throws Exception {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getById'");
     }
 
     
     public void delete(Long id) throws Exception {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
     }
 
     
     public ArrayList<Producto> findAll() throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        //vamos a ver la clase que viene JDBC
+        Connection connection = AdministradorDeConexiones.getConnection();
+        
+        //ahora si armo el sql para hacer un select                                    
+        String sql = "select * from productos";
+        PreparedStatement pst = connection.prepareStatement(sql);
+        
+        ResultSet res =  pst.executeQuery();
+        
+        ArrayList<Producto> listado  = new ArrayList<>();
+        //extraer los datos del res!
+        while(res.next()) {
+            
+            Long id =res.getLong(1);
+            String titulo = res.getString(2);
+            String autor = res.getString(3);
+            double precio = res.getDouble(4);
+            String img = res.getString(5);
+            Date fecha = res.getDate(6);
+            String codigo = res.getString(7);
+            
+            Producto p = new Producto(0, titulo, autor, precio, img, null, codigo);
+        }
+
+        return listado;
     }
 
     
     public void update(Producto articulo) throws Exception {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
  

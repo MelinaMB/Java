@@ -14,7 +14,7 @@ public class App
        //creo el controller
        AltaProductoController controller = new AltaProductoController();
 
-       controller.doPost(null, null);
+    //    controller.doPost(null, null);
 
        System.out.println("fin");
     }
