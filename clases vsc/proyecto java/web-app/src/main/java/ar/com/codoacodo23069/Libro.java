@@ -5,11 +5,11 @@ public class Libro extends Producto{
     //atributos propios
     private String isbn;
 
-    public Libro(String titulo, String autor, double precio, String imagen, int id, String isbn) {
+    public Libro(String titulo, String autor, double precio, String imagen, int id, String isbn, String codigo) {
         // super = padre
         //cuando uso super() estoy invocando a la clase padre es decir que nace el padre, por lo que ya puede nacer el hijo
         //los parametros tienen que estar en orden como esta en el padre
-        super(titulo, autor, precio, imagen, id);
+        super(titulo, autor, precio, imagen, id, codigo);
         //ahora puede nacer el hijo 
         this.isbn = isbn;
     }

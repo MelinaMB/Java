@@ -1,8 +1,12 @@
 package ar.com.cadoacodo.dao.impl;
 
-import java.sql.Connection;
+import java.sql.Connection;//es una interface de JDBC que esta implementado en el conector=driver=dependencia=artefacto=libreria de mysql
+import java.sql.Date;
+//que agregamos al pom.xml
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
+import ar.com.cadoacodo.dao.AdministradorDeConexiones;
 import ar.com.cadoacodo.dao.DAO;
 import ar.com.codoacodo23069.Producto;
 
@@ -11,16 +15,26 @@ import ar.com.codoacodo23069.Producto;
  */
 public class MysqlDaoImpl implements DAO {
     
-    public void createProducto(Producto producto) {
-        //ahora armo el sql para hacer un insert
+    public void create(Producto producto) throws Exception {
 
-        String sql = "INSERT INTO productos (titulo, autor, precio, imagen, fecha, codigo) VALUES ('', '', 1500, 'blablabla', '2023-07-07 13:32:07', 'aaa000');";
-        sql += "()";
         // JDBC
         //connetion: (va a ser entre java y la base de datos)
-        //Connection
+        Connection connection = AdministradorDeConexiones.getConnection();
+        //ahora armo el sql para hacer un insert
+        String sql = "INSERT INTO productos (titulo, autor, precio, imagen, fecha, codigo) VALUES (?, ?, ?, ?, ?, ?);";
         // preparedStatment: va a ser una secuencia sql como insert
+        PreparedStatement pst = connection.prepareStatement(sql);
+
+        //ahora seteo los valores
+        pst.setString(1 , producto.getTitulo());
+        pst.setString(2 , producto.getAutor());
+        pst.setDouble(3 , producto.getPrecio());
+        pst.setString( 4, producto.getImagen());
+        pst.setDate( 5, new Date(System.currentTimeMillis()));
+        pst.setString( 6, producto.getCodigo ());
+        
         //resultSet: va a ser el resultado que se va a dar en forma de tabla
+        pst.executeUpdate(); 
     }
 
     
@@ -46,11 +60,5 @@ public class MysqlDaoImpl implements DAO {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
-
-    
-    public void create(Producto articulo) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'create'");
-    }
-    
+ 
 }

@@ -14,26 +14,27 @@ public class Producto {
     //long se usa cuando necesito un valor mas ampli que el proporcionado por int
     private long id;
     private LocalDate fecha;
+    private String codigo;
 
     //constructor
-    public Producto(String titulo, String autor, double precio, String imagen, int id) {
+    public Producto(String titulo, String autor, double precio, String imagen, int id, String codigo) {
         //el objeto nace con estos valores
+        this.id = id;
+        init(titulo, autor, precio, imagen, codigo);
+    }
+
+    private void init(String titulo, String autor, double precio, String imagen, String codigo) {
         this.titulo = titulo;
         this.autor = autor;
         this.precio = precio;
         this.imagen = imagen;
-        this.id = id;
         this.fecha = LocalDate.now(); //fecha de nacimiento
+        this.codigo = codigo;
     }
 
         //sobrecarga: constructor = polimorfismo (constructor con mismo nombre pero con distintos argumentos)
-     public Producto(String titulo, String autor, double precio, String imagen ) {
-        //el objeto nace con estos valores
-        this.titulo = titulo;
-        this.autor = autor;
-        this.precio = precio;
-        this.imagen = imagen;
-        this.fecha = LocalDate.now(); //fecha de nacimiento
+     public Producto(String titulo, String autor, double precio, String imagen, String codigo ) {
+        init(titulo, autor, precio, imagen, codigo);
     }
 
     //metodos, primero va el tipo de dato que devuelve despues va el metodo
@@ -66,6 +67,10 @@ public class Producto {
         return id;
     }
 
+     public String getCodigo() {
+        return codigo;
+    }
+
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
@@ -80,6 +85,10 @@ public class Producto {
 
     public void setAutor(String autor) {
         this.autor = autor;
+    }
+
+     public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public void setId(long id) {
