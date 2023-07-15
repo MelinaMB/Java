@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CaC23069</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <jsp:include page="styles.jsp"></jsp:include>
 </head>
 <body>
     <jsp:include page="navbar.jsp"></jsp:include>
@@ -21,41 +15,41 @@
                     -->
                     <form method="post" action="<%=request.getContextPath()%>/AltaProductoController">
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" 
+                            <label for="nombre" 
                                 class="form-label">Nombre</label>
                             <input name="nombre" 
                                 type="text" 
                                 class="form-control" 
-                                id="exampleFormControlInput1"
+                                id="nombre"
                                 placeholder="Nombre"
                                 maxlength="50">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" 
+                            <label for="precio" 
                                 class="form-label">Precio
                             </label>
                             <input name="precio" 
                                 type="number" 
                                 class="form-control" 
-                                id="exampleFormControlTextarea1">
+                                id="precio">
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" 
-                                class="form-label">Im&aacute;gen
+                        <!-- <div class="mb-3">
+                            <label for="imagen" 
+                                class="form-label">Imagen
                             </label>
                             <input name="imagen" 
-                                type="file" 
+                                type="text" 
                                 class="form-control" 
-                                id="exampleFormControlTextarea1">
-                        </div>
+                                id="imagen">
+                        </div> -->
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" 
-                                class="form-label">C&oacute;digo
+                            <label for="codigo" 
+                                class="form-label">Codigo
                             </label>
                             <input name="codigo" 
                                 type="text" 
                                 class="form-control" 
-                                id="exampleFormControlTextarea1" 
+                                id="codigo" 
                                 maxlength="7">
                         </div>
                         <div class="mb-3">
@@ -75,6 +69,7 @@
                 </section>
             </div>
         </div>
+        <jsp:include page="scripts.jsp"></jsp:include>
 </body>
 
 </html>

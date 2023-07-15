@@ -5,27 +5,29 @@ import java.time.LocalDate;//api de fecha de java
 
 //clase Producto (puede ser un tipo de dato)
 public class Producto {
-    //atributo, primero va el tipo de dato luego la variable
+    // atributo, primero va el tipo de dato luego la variable
     private long id;
     private String titulo;
     private String autor;
     private Double precio;
     private String imagen;
-    //datos en decimal en java es double
-    //long se usa cuando necesito un valor mas ampli que el proporcionado por int
+    // datos en decimal en java es double
+    // long se usa cuando necesito un valor mas ampli que el proporcionado por int
     private LocalDate fecha;
     private String codigo;
 
-    public Producto(long id, String titulo, String autor, double precio, String imagen, LocalDate fecha, String codigo); {
+    public Producto(long id, String titulo, double precio, String imagen, LocalDate fecha, String codigo,
+            String autor) {
         this.id = id;
         init(titulo, autor, precio, imagen, codigo);
     }
 
-    //constructor
-    // public Producto(String titulo, String autor, double precio, String imagen, int id, String codigo) {
-    //     //el objeto nace con estos valores
-    //     this.id = id;
-    //     init(titulo, autor, precio, imagen, codigo);
+    // constructor
+    // public Producto(String titulo, String autor, double precio, String imagen,
+    // int id, String codigo) {
+    // //el objeto nace con estos valores
+    // this.id = id;
+    // init(titulo, autor, precio, imagen, codigo);
     // }
 
     private void init(String titulo, String autor, double precio, String imagen, String codigo) {
@@ -33,17 +35,26 @@ public class Producto {
         this.autor = autor;
         this.precio = precio;
         this.imagen = imagen;
-        this.fecha = LocalDate.now(); //fecha de nacimiento
+        this.fecha = LocalDate.now(); // fecha de nacimiento
         this.codigo = codigo;
     }
 
-        //sobrecarga: constructor = polimorfismo (constructor con mismo nombre pero con distintos argumentos)
-     public Producto(String titulo, String autor, double precio, String imagen, String codigo ) {
+    // sobrecarga: constructor = polimorfismo (constructor con mismo nombre pero con
+    // distintos argumentos)
+    public Producto(String titulo, String autor, double precio, String imagen, String codigo) {
         init(titulo, autor, precio, imagen, codigo);
     }
 
-    //metodos, primero va el tipo de dato que devuelve despues va el metodo
-    //si en vez de poner string pongo void no se pondria en rojo porque no necesita retornar nada 
+    public Producto(long id,String titulo, String autor, double precio) {
+        this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.precio = precio;
+    }
+
+    // metodos, primero va el tipo de dato que devuelve despues va el metodo
+    // si en vez de poner string pongo void no se pondria en rojo porque no necesita
+    // retornar nada
     String obtenerImagen() {
         return this.imagen;
     }
@@ -72,7 +83,7 @@ public class Producto {
         return id;
     }
 
-     public String getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
@@ -92,7 +103,7 @@ public class Producto {
         this.autor = autor;
     }
 
-     public void setCodigo(String codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -103,6 +114,7 @@ public class Producto {
     public LocalDate getFecha() {
         return this.fecha;
     }
-    //no implementamos el setter de feccha ya que no se deberia modificar la fecha de nacimiento
+    // no implementamos el setter de feccha ya que no se deberia modificar la fecha
+    // de nacimiento
 
 }
